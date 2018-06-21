@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "doc": "typedoc --out ./docs --mode file --theme minimal",
+    "doc": "typedoc --out ./docs --mode file --ignoreCompilerErrors --theme minimal",
     "lint": "tslint src/**/*.ts __tests__/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
     "precommit": "lint-staged",
