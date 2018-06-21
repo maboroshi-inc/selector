@@ -1,0 +1,16 @@
+import { $ } from '../src'
+
+describe('$()', () => {
+  it('`document`から最初の`p`を返す', () => {
+    document.body.innerHTML = `<div><p>hoge</p><p>fuga</p><p>piyo</p></div>`
+
+    expect($('p')).toMatchSnapshot()
+  })
+
+  it('`#context`から最初の`span`を返す', () => {
+    document.body.innerHTML = `<div><p>hoge</p><p id="context"><span>fuga</span></p><p>piyo</p></div>`
+
+    const contextEl = $('#context')
+    expect($('span', contextEl!)).toMatchSnapshot()
+  })
+})
