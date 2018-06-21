@@ -9,5 +9,5 @@ export function $<E extends Element = Element>(
   selector: string,
   ctx: Document | Element = document
 ): E | null {
-  return ctx.querySelector(selector)
+  return ctx.querySelector<E>(selector)
 }
