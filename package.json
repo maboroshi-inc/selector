@@ -5,11 +5,15 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "lint": "tslint src/**/*.ts __tests__/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
     "precommit": "lint-staged",
+    "prepublish": "npm run lint && npm run test && npm run build",
     "test": "jest --coverage"
   },
   "repository": {
