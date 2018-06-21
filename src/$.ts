@@ -7,7 +7,7 @@
  */
 export function $<E extends Element = Element>(
   selector: string,
-  ctx: Document | Element = document
+  ctx: ParentNode = document
 ): E | null {
   return ctx.querySelector<E>(selector)
 }

@@ -7,7 +7,7 @@
  */
 export function $$<E extends Element = Element>(
   selector: string,
-  ctx: Document | Element = document
+  ctx: ParentNode = document
 ): NodeListOf<E> {
   return ctx.querySelectorAll<E>(selector)
 }
