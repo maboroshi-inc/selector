@@ -1,2 +1,2 @@
 # selector
-Just aliases of querySelector
+単純なquerySelectorのエイリアス
