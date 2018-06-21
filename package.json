@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/maboroshi-inc/selector/issues"
   },
-  "homepage": "https://github.com/maboroshi-inc/selector#readme"
+  "homepage": "https://github.com/maboroshi-inc/selector#readme",
+  "devDependencies": {
+    "rollup": "^0.61.0",
+    "rollup-plugin-typescript2": "^0.15.0",
+    "typescript": "^2.9.2"
+  }
 }
