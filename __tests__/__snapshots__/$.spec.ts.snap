@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`$() \`#context\`から最初の\`span\`を返す 1`] = `
+<span>
+  fuga
+</span>
+`;
+
+exports[`$() \`document\`から最初の\`p\`を返す 1`] = `
+<p>
+  hoge
+</p>
+`;

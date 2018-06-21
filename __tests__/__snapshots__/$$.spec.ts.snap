@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`$$() \`#context\`から全ての\`span\`を返す 1`] = `
+Array [
+  <span>
+    fuga
+  </span>,
+  <span>
+    fuga
+  </span>,
+  <span>
+    fuga
+  </span>,
+]
+`;
+
+exports[`$$() \`document\`から全ての\`p\`を返す 1`] = `
+Array [
+  <p>
+    hoge
+  </p>,
+  <p>
+    fuga
+  </p>,
+  <p>
+    piyo
+  </p>,
+]
+`;
