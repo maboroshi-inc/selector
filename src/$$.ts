@@ -20,6 +20,9 @@ export function $$<E extends Element = Element>(
   ctx?: ParentNode
 ): NodeListOf<E>
 
-export function $$(selector: string, ctx: ParentNode = document) {
+export function $$(
+  selector: keyof HTMLElementTagNameMap | keyof SVGElementTagNameMap | string,
+  ctx: ParentNode = document
+) {
   return ctx.querySelectorAll(selector)
 }
