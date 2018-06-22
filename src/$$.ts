@@ -5,9 +5,21 @@
  * @param ctx コンテキスト要素
  * @returns `ctx` から `selector` にマッチする全ての要素を返す
  */
+export function $$<K extends keyof HTMLElementTagNameMap>(
+  selector: K,
+  ctx?: ParentNode
+): NodeListOf<HTMLElementTagNameMap[K]>
+
+export function $$<K extends keyof SVGElementTagNameMap>(
+  selector: K,
+  ctx?: ParentNode
+): NodeListOf<SVGElementTagNameMap[K]>
+
 export function $$<E extends Element = Element>(
   selector: string,
-  ctx: ParentNode = document
-): NodeListOf<E> {
-  return ctx.querySelectorAll<E>(selector)
+  ctx?: ParentNode
+): NodeListOf<E>
+
+export function $$(selector: string, ctx: ParentNode = document) {
+  return ctx.querySelectorAll(selector)
 }
