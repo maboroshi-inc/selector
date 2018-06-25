@@ -921,7 +921,21 @@ img { max-width: 100%; }
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
 			<h1 id="selector">selector</h1>
-			<p>単純なquerySelectorのエイリアス</p>
+			<p>単純な querySelector のエイリアス</p>
+			<h2 id="-">インストール</h2>
+			<pre><code class="lang-sh">npm install @maboroshi/selector
+</code></pre>
+			<p>or</p>
+			<pre><code class="lang-sh">yarn add @maboroshi/selector
+</code></pre>
+			<h2 id="-">使い方</h2>
+			<pre><code class="lang-js"><span class="hljs-keyword">import</span> { $, $$ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@maboroshi/selector'</span>
+
+<span class="hljs-built_in">console</span>.log($(<span class="hljs-string">'p'</span>)) <span class="hljs-comment">// =&gt; The 1st P element on the document.</span>
+<span class="hljs-built_in">console</span>.log($$(<span class="hljs-string">'p'</span>)) <span class="hljs-comment">// =&gt; The All P elements on the document.</span>
+</code></pre>
+			<h2 id="api">API</h2>
+			<p><a href="https://maboroshi-inc.github.io/selector/">API ドキュメント</a> を見る</p>
 		</div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
@@ -943,13 +957,15 @@ img { max-width: 100%; }
 				<a name="_" class="tsd-anchor"></a>
 				<h3>$</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">$&lt;K&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, ctx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElementTagNameMap[K]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					<li class="tsd-signature tsd-kind-icon">$&lt;K&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, ctx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SVGElementTagNameMap[K]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					<li class="tsd-signature tsd-kind-icon">$&lt;E&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ctx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/maboroshi-inc/selector/blob/ddb97a6/src/$.ts#L8">src/$.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/maboroshi-inc/selector/blob/d052a46/src/$.ts#L8">src/$.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -960,50 +976,62 @@ img { max-width: 100%; }
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
 						<ul class="tsd-type-parameters">
 							<li>
-								<h4>E<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></h4>
+								<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof HTMLElementTagNameMap</span></h4>
 							</li>
 						</ul>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>selector: <span class="tsd-signature-type">string</span></h5>
+								<h5>selector: <span class="tsd-signature-type">K</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<p>セレクター文字列</p>
 								</div>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> ctx: <span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol"> =&nbsp;document</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> ctx: <span class="tsd-signature-type">ParentNode</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<p>コンテキスト要素</p>
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">E</span>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElementTagNameMap[K]</span>
 							<span class="tsd-signature-symbol"> | </span>
 							<span class="tsd-signature-type">null</span>
 						</h4>
 						<p><code>ctx</code> から <code>selector</code> にマッチする最初の要素を返す</p>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
-				<a name="__" class="tsd-anchor"></a>
-				<h3>$$</h3>
-				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">$$&lt;E&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ctx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeListOf</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/maboroshi-inc/selector/blob/ddb97a6/src/$$.ts#L8">src/$$.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/maboroshi-inc/selector/blob/d052a46/src/$.ts#L13">src/$.ts:13</a></li>
 							</ul>
 						</aside>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>セレクターにマッチする全ての要素を返す</p>
-							</div>
-						</div>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof SVGElementTagNameMap</span></h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>selector: <span class="tsd-signature-type">K</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> ctx: <span class="tsd-signature-type">ParentNode</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">SVGElementTagNameMap[K]</span>
+							<span class="tsd-signature-symbol"> | </span>
+							<span class="tsd-signature-type">null</span>
+						</h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/maboroshi-inc/selector/blob/d052a46/src/$.ts#L18">src/$.ts:18</a></li>
+							</ul>
+						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
 						<ul class="tsd-type-parameters">
 							<li>
@@ -1014,19 +1042,107 @@ img { max-width: 100%; }
 						<ul class="tsd-parameters">
 							<li>
 								<h5>selector: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> ctx: <span class="tsd-signature-type">ParentNode</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">E</span>
+							<span class="tsd-signature-symbol"> | </span>
+							<span class="tsd-signature-type">null</span>
+						</h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="__" class="tsd-anchor"></a>
+				<h3>$$</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">$$&lt;K&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, ctx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeListOf</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HTMLElementTagNameMap[K]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">$$&lt;K&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, ctx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeListOf</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SVGElementTagNameMap[K]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">$$&lt;E&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ctx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeListOf</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/maboroshi-inc/selector/blob/d052a46/src/$$.ts#L8">src/$$.ts:8</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>セレクターにマッチする全ての要素を返す</p>
+							</div>
+						</div>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof HTMLElementTagNameMap</span></h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>selector: <span class="tsd-signature-type">K</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<p>セレクター文字列</p>
 								</div>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> ctx: <span class="tsd-signature-type">ParentNode</span><span class="tsd-signature-symbol"> =&nbsp;document</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> ctx: <span class="tsd-signature-type">ParentNode</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<p>コンテキスト要素</p>
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NodeListOf</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NodeListOf</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HTMLElementTagNameMap[K]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						<p><code>ctx</code> から <code>selector</code> にマッチする全ての要素を返す</p>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/maboroshi-inc/selector/blob/d052a46/src/$$.ts#L13">src/$$.ts:13</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof SVGElementTagNameMap</span></h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>selector: <span class="tsd-signature-type">K</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> ctx: <span class="tsd-signature-type">ParentNode</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NodeListOf</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SVGElementTagNameMap[K]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/maboroshi-inc/selector/blob/d052a46/src/$$.ts#L18">src/$$.ts:18</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-type-parameters-title">Type parameters</h4>
+						<ul class="tsd-type-parameters">
+							<li>
+								<h4>E<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></h4>
+							</li>
+						</ul>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>selector: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> ctx: <span class="tsd-signature-type">ParentNode</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NodeListOf</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
