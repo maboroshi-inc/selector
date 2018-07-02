@@ -1,4 +1,5 @@
 import filesize from 'rollup-plugin-filesize'
+import progress from 'rollup-plugin-progress'
 import typescript from 'rollup-plugin-typescript2'
 
 export default {
@@ -15,6 +16,7 @@ export default {
     }
   ],
   plugins: [
+    progress(),
     typescript({
       tsconfigOverride: {
         compilerOptions: {
