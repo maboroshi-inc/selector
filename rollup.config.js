@@ -1,3 +1,4 @@
+import filesize from 'rollup-plugin-filesize'
 import typescript from 'rollup-plugin-typescript2'
 
 export default {
@@ -22,6 +23,7 @@ export default {
         },
         exclude: ['__tests__']
       }
-    })
+    }),
+    filesize()
   ]
 }
