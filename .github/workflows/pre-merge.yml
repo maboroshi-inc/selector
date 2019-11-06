@@ -18,6 +18,6 @@ jobs:
         npm ci
         npm run lint
         npx tsc --noEmit
-        npm test
+        npm test -- --ci
       env:
         CI: true
