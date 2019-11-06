@@ -10,6 +10,6 @@ import { MatchedElement, Selector } from './types'
 export function $<E extends Element = Element, T extends Selector = string>(
   selector: T,
   ctx: ParentNode = document
-): MatchedElement<T, E> | null {
+): MatchedElement<T, E> {
   return ctx.querySelector(selector)
 }
