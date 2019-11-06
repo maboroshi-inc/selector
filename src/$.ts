@@ -7,9 +7,6 @@ import { MatchedElement, Selector } from './types'
  * @param ctx コンテキスト要素
  * @returns `ctx` から `selector` にマッチする最初の要素を返す
  */
-export function $<E extends Element = Element, T extends Selector = string>(
-  selector: T,
-  ctx: ParentNode = document
-): MatchedElement<T, E> | null {
+export function $<E extends Element = Element, T extends Selector = string>(selector: T, ctx: ParentNode = document): MatchedElement<T, E> | null {
   return ctx.querySelector(selector)
 }
