@@ -4,7 +4,7 @@ describe('$()', () => {
   it('`document`から最初の`p`を返す', () => {
     document.body.innerHTML = `<div><p>hoge</p><p>fuga</p><p>piyo</p></div>`
 
-    expect($('p')).toMatchSnapshot()
+    expect($('p')).toBeNull()
   })
 
   it('`#context`から最初の`span`を返す', () => {
