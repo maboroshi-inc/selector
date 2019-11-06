@@ -37,7 +37,6 @@
     "jest": "^24.8.0",
     "lint-staged": "^9.2.0",
     "prettier": "^1.17.1",
-    "release-it": "^12.2.2",
     "rollup": "^1.14.0",
     "rollup-plugin-filesize": "^6.1.0",
     "rollup-plugin-progress": "^1.1.1",
