@@ -13,11 +13,13 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - name: npm install, lint, type-check, and test
+    - name: npm install, lint, type-check
       run: |
         npm ci
         npm run lint
         npx tsc --noEmit
-        npm test -- --ci
       env:
         CI: true
+    - name: Run Jest
+      uses: stefanoeb/jest-action@1.0.0
+      args: ['--ci']
