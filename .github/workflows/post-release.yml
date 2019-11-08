@@ -17,6 +17,6 @@ jobs:
       run: |
         npm ci
         npm run doc
-        npx gh-pages -d docs -u "haribote <haribote.nobody@gmail.com>" -r "https://${{ secrets.GITHUB_TOKEN }}@github.com/maboroshi-inc/selector.git"
+        npx gh-pages -d docs -r https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
       env:
         CI: true
