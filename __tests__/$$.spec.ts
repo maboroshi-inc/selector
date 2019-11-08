@@ -11,6 +11,6 @@ describe('$$()', () => {
     document.body.innerHTML = `<div><p><span>hoge</span><span>hoge</span><span>hoge</span></p><p id="context"><span>fuga</span><span>fuga</span><span>fuga</span></p><p><span>piyo</span><span>piyo</span><span>piyo</span></p></div>`
 
     const contextEl = $<HTMLParagraphElement>('#context')
-    expect(Array.from($$('span', contextEl!))).toMatchSnapshot()
+    expect(contextEl && Array.from($$('span', contextEl))).toMatchSnapshot()
   })
 })
