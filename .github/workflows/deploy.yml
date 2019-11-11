@@ -16,3 +16,20 @@ jobs:
       - name: check version
         run: |
           npx can-npm-publish --verbose
+
+  deploy:
+    name: post-process to publish
+
+    needs: [test]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: deploy document
+        run: |
+          npx typedoc --out ./docs --mode file --ignoreCompilerErrors --theme minimal
+          npx gh-pages -d docs -u "${{ secrets.PUBLISH_GH_PAGES_USER }}"  -r "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
