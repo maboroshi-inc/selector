@@ -15,9 +15,15 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: check version
+      - name: npm install, lint, type-check, test, and version-cehck
         run: |
+          npm ci
+          npm run lint
+          npx tsc --noEmit
+          npm test -- --ci
           npx can-npm-publish --verbose
+        env:
+          CI: true
 
   publish:
     name: publish to npm
