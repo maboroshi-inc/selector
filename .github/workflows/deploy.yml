@@ -37,13 +37,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: npm install, publish
-        run: |
-          npm ci
-          npm publish
+      - name: npm install
+        run: npm ci
         env:
           CI: true
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: npm publish
+        run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   deploy:
     name: post-process to publish
