@@ -34,3 +34,5 @@ jobs:
           npm ci
           npx typedoc --out ./docs --mode file --ignoreCompilerErrors --theme minimal
           npx gh-pages -d docs -u "${{ secrets.PUBLISH_GH_PAGES_USER }}"  -r "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+        env:
+          CI: true
