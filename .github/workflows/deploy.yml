@@ -15,4 +15,4 @@ jobs:
           node-version: '12.x'
       - name: check version
         run: |
-          npx can-npm-publish -- --verbose
+          npx can-npm-publish --verbose
