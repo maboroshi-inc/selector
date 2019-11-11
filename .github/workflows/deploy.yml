@@ -19,6 +19,26 @@ jobs:
         run: |
           npx can-npm-publish --verbose
 
+  publish:
+    name: publish to npm
+
+    needs: [test]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: npm install, publish
+        run: |
+          npm ci
+          npm publish
+        env:
+          CI: true
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
   deploy:
     name: post-process to publish
 
