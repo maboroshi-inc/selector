@@ -37,7 +37,7 @@
     "prettier": "^1.17.1",
     "rollup": "^1.14.0",
     "rollup-plugin-filesize": "^6.1.0",
-    "rollup-plugin-progress": "^1.1.1",
+    "rollup-plugin-progress": "^1.1.2",
     "rollup-plugin-typescript2": "^0.26.0",
     "ts-jest": "^25.2.1",
     "typescript": "^3.5.1"
